@@ -40,17 +40,17 @@ fi
 if [ "$PYTHON_VERSION" = "3.5" ]; then
     pip --no-cache-dir install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp35-cp35m-linux_x86_64.whl
 else
-    pip --no-cache-dir install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
+    pip --no-cache-dir install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl -q
 fi
 
 if [ "$PYSTAN_VERSION" = "latest" ]; then
-    pip --no-cache-dir install pystan
+    pip --no-cache-dir install pystan -q
 else
     pip --no-cache-dir install pystan==${PYSTAN_VERSION}
 fi
 
-pip install --upgrade pip
+pip install --upgrade pip -q
 
 #  Install editable using the setup.py
-pip install  --no-cache-dir -r requirements.txt
-pip install  --no-cache-dir -r requirements-dev.txt
+pip install  --no-cache-dir -r requirements.txt -q
+pip install  --no-cache-dir -r requirements-dev.txt -q
