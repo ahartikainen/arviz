@@ -31,6 +31,7 @@ before_script:
 script:
   #- if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then . ./scripts/lint.sh ; fi
   #- pytest -v arviz/tests/ #--cov=arviz/
+  - python -q -X faulthandler
   - python -c "import sys; print(sys)"
   - python -c "import matplotlib; print(matplotlib)"
   - python -c "import matplotlib.pyplot as plt; print(plt)"
