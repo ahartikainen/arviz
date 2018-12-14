@@ -31,12 +31,9 @@ before_script:
 script:
   #- if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then . ./scripts/lint.sh ; fi
   #- pytest -v arviz/tests/ #--cov=arviz/
-  - python -q -X faulthandler
-  - python -c "import sys; print(sys)"
-  - python -c "import matplotlib; print(matplotlib)"
-  - python -c "import matplotlib.pyplot as plt; print(plt)"
+  - python -c "import faulthandler;faulthandler.enable()"
   - travis-sphinx --help
-  - travis-sphinx --verbose build --source=doc
+  - travis-sphinx build --source=doc --verbose
 
 after_success:
   #- if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then travis-sphinx deploy; fi
