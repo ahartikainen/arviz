@@ -9,4 +9,6 @@ import arviz as az
 az.style.use('arviz-darkgrid')
 
 data = az.load_arviz_data('non_centered_eight')
+print("HERE PPC1")
 az.plot_ppc(data, alpha=0.3, kind='cumulative', figsize=(12, 6), textsize=14)
+print("HERE PPC2")
