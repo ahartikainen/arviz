@@ -8,7 +8,7 @@ pydocstyle
 pylint
 pytest
 pytest-cov
-Sphinx=1.8.1
+Sphinx==1.8.1
 sphinx-bootstrap-theme
 sphinx-gallery
 travis-sphinx==2.0.0
