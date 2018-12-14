@@ -6,12 +6,9 @@ nbsphinx
 numpydoc
 pydocstyle
 pylint
-pyro-ppl
-tensorflow
-tensorflow-probability
 pytest
 pytest-cov
-Sphinx
+Sphinx=1.8.1
 sphinx-bootstrap-theme
 sphinx-gallery
 travis-sphinx==2.0.0
