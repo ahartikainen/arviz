@@ -2,10 +2,8 @@ language: python
 
 python:
   - "3.6"
-  - "3.5"
 
 env:
-  - PYSTAN_VERSION=2.17
   - PYSTAN_VERSION=latest
 
 addons:
@@ -33,7 +31,7 @@ before_script:
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then . ./scripts/lint.sh ; fi
   - pytest -v arviz/tests/ --cov=arviz/
-  - travis-sphinx build --nowarn --source=doc
+  - travis-sphinx build --source=doc
 
 after_success:
   - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then travis-sphinx deploy; fi
