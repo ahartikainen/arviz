@@ -10,10 +10,10 @@ addons:
   apt_packages:
     - pandoc
 
-cache:
-  directories:
-    - $HOME/.theano
-    - $HOME/miniconda
+#cache:
+#  directories:
+#    - $HOME/.theano
+#    - $HOME/miniconda
 
 install:
   - sudo apt-get update
@@ -31,7 +31,7 @@ before_script:
 script:
   #- if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then . ./scripts/lint.sh ; fi
   #- pytest -v arviz/tests/ #--cov=arviz/
-  - travis-sphinx --verbose build #--source=doc
+  - travis-sphinx build --verbose --source=doc
 
 after_success:
   #- if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then travis-sphinx deploy; fi
