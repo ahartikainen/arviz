@@ -126,15 +126,15 @@ def default_grid(n_items, max_cols=4, min_cols=3):  # noqa: D202
         Rows and columns, so that rows * columns >= n_items
     """
 
-    def in_bounds(val):
-        return np.clip(val, min_cols, max_cols)
+    #def in_bounds(val):
+    #    return np.clip(val, min_cols, max_cols)
 
     if n_items <= max_cols:
         return 1, n_items
-    ideal = in_bounds(round(n_items ** 0.5))
+    ideal = np.clip(round(n_items ** 0.5), min_cols, max_cols)
 
     for offset in (0, 1, -1, 2, -2):
-        cols = in_bounds(ideal + offset)
+        cols = np.clip(ideal + offset, min_cols, max_cols)
         rows, extra = divmod(n_items, cols)
         if extra == 0:
             return rows, cols
