@@ -169,7 +169,7 @@ def plot_ppc(
         )
 
     pp_sample_ix = np.random.choice(total_pp_samples, size=num_pp_samples, replace=False)
-    return
+
     for key in coords.keys():
         coords[key] = np.where(np.in1d(observed[key], coords[key]))[0]
 
@@ -188,7 +188,7 @@ def plot_ppc(
     )
     length_plotters = len(obs_plotters)
     rows, cols = default_grid(length_plotters)
-    return
+
     (figsize, ax_labelsize, _, xt_labelsize, linewidth, markersize) = _scale_fig_size(
         figsize, textsize, rows, cols
     )
