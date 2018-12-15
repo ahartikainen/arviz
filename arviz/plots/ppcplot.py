@@ -178,7 +178,7 @@ def plot_ppc(
         )
     )
     
-    pp_plotters =: list(
+    pp_plotters = list(
         xarray_var_iter(
             posterior_predictive.isel(coords),
             var_names=pp_var_names,
@@ -187,7 +187,7 @@ def plot_ppc(
         )
     )
     length_plotters = len(obs_plotters)
-    return
+    
     rows, cols = default_grid(length_plotters)
 
     (figsize, ax_labelsize, _, xt_labelsize, linewidth, markersize) = _scale_fig_size(
