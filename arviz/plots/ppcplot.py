@@ -188,8 +188,8 @@ def plot_ppc(
     )
     length_plotters = len(obs_plotters)
     
-    rows, cols = default_grid(length_plotters)
-    return
+    rows, cols = 10,10 #default_grid(length_plotters)
+    
     (figsize, ax_labelsize, _, xt_labelsize, linewidth, markersize) = _scale_fig_size(
         figsize, textsize, rows, cols
     )
