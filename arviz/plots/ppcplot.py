@@ -78,7 +78,8 @@ def plot_ppc(
     Returns
     -------
     axes : matplotlib axes
-
+    """
+    """
     Examples
     --------
     Plot the observed data KDE overlaid on posterior predictive KDEs.
@@ -168,7 +169,7 @@ def plot_ppc(
         )
 
     pp_sample_ix = np.random.choice(total_pp_samples, size=num_pp_samples, replace=False)
-
+    return
     for key in coords.keys():
         coords[key] = np.where(np.in1d(observed[key], coords[key]))[0]
 
