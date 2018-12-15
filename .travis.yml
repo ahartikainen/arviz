@@ -31,13 +31,7 @@ before_script:
 script:
   #- if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then . ./scripts/lint.sh ; fi
   #- pytest -v arviz/tests/ #--cov=arviz/
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(0,1))"
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(1,1))"
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(1,0))"
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(-1,1))"
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(1,-1))"
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(0,-1))"
-  - python -c "import faulthandler;faulthandler.enable();print(divmod(-1,0))"
+  - python -c "import faulthandler;faulthandler.enable()"
   - travis-sphinx --help
   - travis-sphinx build --source=doc
 
