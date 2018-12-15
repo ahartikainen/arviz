@@ -89,8 +89,7 @@ def plot_ppc(
         >>> import arviz as az
         >>> data = az.load_arviz_data('radon')
         >>> az.plot_ppc(data)
-    """
-    """
+    
     Plot the overlay with empirical CDFs.
 
     .. plot::
@@ -172,7 +171,7 @@ def plot_ppc(
 
     for key in coords.keys():
         coords[key] = np.where(np.in1d(observed[key], coords[key]))[0]
-
+    return
     obs_plotters = list(
         xarray_var_iter(
             observed.isel(coords), skip_dims=set(flatten), var_names=var_names, combined=True
