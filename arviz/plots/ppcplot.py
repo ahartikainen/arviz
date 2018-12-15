@@ -171,12 +171,13 @@ def plot_ppc(
 
     for key in coords.keys():
         coords[key] = np.where(np.in1d(observed[key], coords[key]))[0]
-    return
+    
     obs_plotters = list(
         xarray_var_iter(
             observed.isel(coords), skip_dims=set(flatten), var_names=var_names, combined=True
         )
     )
+    return
     pp_plotters = list(
         xarray_var_iter(
             posterior_predictive.isel(coords),
